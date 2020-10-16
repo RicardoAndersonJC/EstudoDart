@@ -1,0 +1,42 @@
+class Pessoa{
+ int _idade ;
+ String nome;
+ String sobreNome; 
+  
+  Pessoa(this.nome,this._idade,this.sobreNome);
+  
+  void dormir(){
+    print("$nome $sobreNome está dormindo");
+  }
+  void aniver(){
+    _idade++;
+  }
+  
+  double somaNum(double num1,double num2){
+    
+    double res = num1 + num2;
+    return res;
+  }
+  
+  int get idade =>  _idade;
+  
+   set idade (int idade){
+     if (idade > 0 && idade <= 50){
+       _idade = idade;   
+     }
+    
+  }
+  
+  
+}
+
+
+void main() {
+ 
+  Pessoa  pessoa1 = new Pessoa("Ricardo",23,"Anderson");
+   print(pessoa1.somaNum(5,8));
+   pessoa1.dormir();
+   print(pessoa1.idade);  
+   pessoa1.idade = 50;
+   print(pessoa1.idade);
+}

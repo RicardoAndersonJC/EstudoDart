@@ -1,0 +1,53 @@
+class Animal {
+  String nome;
+  double peso;
+
+  Animal(this.nome, this.peso);
+
+  void som() {
+    print("$nome está fazendo som");
+  }
+
+  void comer() {
+    print("$nome está comendo");
+  }
+}
+
+class Cachorro extends Animal {
+  Cachorro(String nome, double peso) : super(nome, peso);
+  void latir() {
+    print("$nome está latindo");
+  }
+
+  @override
+  String toString() {
+    return "Cachorro | nome : $nome Peso $peso";
+  }
+}
+
+class Gato extends Animal {
+  Gato(String nome, double peso) : super(nome, peso);
+
+  void miar() {
+    print("$nome está miando");
+  }
+
+  @override
+  String toString() {
+    return "Gato | nome : $nome Peso $peso";
+  }
+}
+
+void main() {
+  Cachorro dog = new Cachorro("Dog", 10);
+  Gato cat = new Gato("Cat", 20);
+
+  dog.latir();
+  cat.miar();
+  dog.comer();
+  cat.comer();
+  dog.som();
+  cat.som();
+  print(dog);
+  print(cat);
+}
